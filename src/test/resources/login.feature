@@ -2,7 +2,8 @@ Feature: User login feature
 
 
 
-
+Background:
+  Given I am on the home page
 
 
 
@@ -12,7 +13,7 @@ Feature: User login feature
     Then I should be able to login successfully
 
 
-  @login
+  @login1
   Scenario: Registered user login positive parametrized
     When I enter "lara.alissa" as a username and "lara12345" as password
     Then I should be able to login successfully
@@ -43,3 +44,29 @@ Feature: User login feature
     Then I should have 155 cucumbers
 
 
+
+  @so
+  Scenario Outline: Registered user login positive parametrized
+    When I enter "<username>" as a username and "<password>" as password
+    Then I should be able to login successfully and the name should be "<name>"
+
+    Examples: valid user credentials
+      | username    | password  | name            |
+      | lara.alissa | lara12345 | Lara Alissa     |
+      | duotechb8   | duotechb8 | Duotech Academy |
+      | janedoe     | janedoe   | Jane Doe        |
+      | johndoe     | johndoe   | John Doe        |
+      | magdalena   | magdalena | Magdalena Nitek |
+
+  @docString
+  Scenario: Verify database table
+    When I send the following query
+           """
+            select first_name,last_name,email,address,district,city,country from customer
+            join address
+            on customer.address_id = address.address_id
+            join city
+            on address.city_id  = city.city_id
+            join country
+            on city.country_id = country.country_id;
+            """

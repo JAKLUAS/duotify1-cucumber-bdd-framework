@@ -12,7 +12,7 @@ import java.time.Duration;
 public class Hooks {
 
 
-    @Before
+    @Before ("not @db")
     public void setup(){
 
         Driver.getDriver().manage().window().maximize();
