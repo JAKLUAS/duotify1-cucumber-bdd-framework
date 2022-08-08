@@ -1,4 +1,4 @@
-package com.duotify.stepDefintions;
+package com.duotify.stepDefintions.ui;
 
 import com.duotify.pages.HomePage;
 import com.duotify.pages.WelcomePage;
@@ -59,8 +59,11 @@ public class SingUpStepDefs {
     }
     @Then("I should not be able to sign up")
     public void i_should_not_be_able_to_sign_up() {
-        Assert.assertNotEquals("http://qa-duotify.us-east-2.elasticbeanstalk.com/browse.php?", Driver.getDriver().getCurrentUrl());
+       // Assert.assertNotEquals("http://qa-duotify.us-east-2.elasticbeanstalk.com/browse.php?", Driver.getDriver().getCurrentUrl());
 
+        SoftAssertions softAssertions = new SoftAssertions();
+        softAssertions.assertThat( Driver.getDriver().getCurrentUrl()).isEqualTo("http://qa-duotify.us-east-2.elasticbeanstalk.com/browse.php?");
+        softAssertions.assertAll();
     }
 
     @When("I navigate to signup page and enter no credentials")

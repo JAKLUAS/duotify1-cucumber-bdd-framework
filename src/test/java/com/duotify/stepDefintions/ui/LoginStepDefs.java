@@ -1,4 +1,4 @@
-package com.duotify.stepDefintions;
+package com.duotify.stepDefintions.ui;
 
 import com.duotify.pages.HomePage;
 import com.duotify.utilities.Driver;
@@ -36,7 +36,7 @@ public class LoginStepDefs {
     @Then("I should be able to login successfully")
     public void i_should_be_able_to_login_successfully() {
 
-        Assert.assertEquals("http://qa-duotify.us-east-2.elasticbeanstalk.com/browse.php?", Driver.getDriver().getCurrentUrl());
+        Assert.assertEquals("http://qa-duotify.us-east-2.elasticbeanstalk.com/register.php?", Driver.getDriver().getCurrentUrl());
     }
 
 

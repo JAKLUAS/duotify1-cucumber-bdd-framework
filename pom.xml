@@ -59,6 +59,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
 
     </dependencies>
 
@@ -71,8 +76,22 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
+
+
                         <include>**/*CucumberRunner.java</include>
+                        <include>**/*FailedScenariosRunner.java</include>
+
+
                     </includes>
+
+
+                    <!--                       These 2 options have to added when running tests in parallel -->
+
+
+
+                    <parallel>methods</parallel>
+                    <useUnlimitedThreads>true</useUnlimitedThreads>
+
                 </configuration>
             </plugin>
             <plugin>

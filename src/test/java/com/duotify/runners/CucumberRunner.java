@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
  @RunWith(Cucumber.class)
  @CucumberOptions(
 
-         tags = "@data_driven_csv", //"@smoke and @signup" -> scenarios tagged with both @smoke and @signup
+         tags = " @data_mapping_db_to_ui", //"@smoke and @signup" -> scenarios tagged with both @smoke and @signup
                                       // @smoke or @signup" -> scenarios tagged with either @smoke or @signup
                                       // @smoke or @signup and @regression ->  scenarios tagged with either smoke OR signup and regression (signup and regression evaluated first)
                                       //(@smoke or @signup) and @regression ->  scenarios tagged with either smoke or signup AND regression (smoke or signup evaluated first)
@@ -24,7 +24,7 @@ import org.junit.runner.RunWith;
                  "json:target/cucumber.json"
          }
 
-         ,dryRun = true // quickly generate snippets without runnig the scenarion
+         //,dryRun = true // quickly generate snippets without runnig the scenarion
      )
     public class CucumberRunner {
   }
