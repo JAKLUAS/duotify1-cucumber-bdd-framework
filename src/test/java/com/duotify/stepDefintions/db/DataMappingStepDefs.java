@@ -6,7 +6,6 @@ import com.duotify.pages.WelcomePage;
 import com.duotify.utilities.ConfigReader;
 import com.duotify.utilities.DBUtils;
 import com.duotify.utilities.Driver;
-import com.sun.deploy.cache.BaseLocalApplicationProperties;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.codec.digest.DigestUtils;
