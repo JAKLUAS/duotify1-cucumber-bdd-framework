@@ -79,7 +79,7 @@
 
 
                         <include>**/*CucumberRunner.java</include>
-                        <include>**/*FailedScenariosRunner.java</include>
+<!--                        <include>**/*FailedScenariosRunner.java</include>-->
 
 
                     </includes>
